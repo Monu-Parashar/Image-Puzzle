@@ -53,7 +53,7 @@ var setTheme = {
     });
     let images = document.querySelectorAll('input[name="i"]');
     images.forEach((v) => {
-      v.style.setProperty("--bgi", "url(/images/" + v.value + ".jpg)");
+      v.style.setProperty("--bgi", "url(" + v.value + ".jpg)");
       v.onchange = function() {
         setTheme.changeImage(v.value);
       };
@@ -70,7 +70,7 @@ var setTheme = {
     root.style.setProperty("--back-2", themeArray[2]);
   },
   changeImage: function(v) {
-    root.style.setProperty("--image", "url(/images/" + v + ".jpg)");
+    root.style.setProperty("--image", "url(" + v + ".jpg)");
   },
 };
 
