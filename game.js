@@ -170,7 +170,7 @@ window.onload = function() {
   let source = audio.createBufferSource();
   source.connect(audio.destination);
   let request = new XMLHttpRequest();
-  request.open('GET', '../source/Warriyo.mp3', true);
+  request.open('GET', 'Warriyo.mp3', true);
   request.responseType = 'arraybuffer';
   request.onload = function() {
     audio.decodeAudioData(request.response, function(response) {
