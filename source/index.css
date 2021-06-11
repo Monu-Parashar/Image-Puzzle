@@ -1,0 +1,219 @@
+:root {
+  --color: black;
+  --back-2: #55634242;
+  --back: white;
+  --image: url(../images/0.jpg);
+  --size: 3;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-variant: small-caps;
+  font-size: 2.8vw;
+  color: var(--color);
+  background-color: var(--back);
+  background-image: linear-gradient(45deg, transparent 48%, var(--back-2) 48%, var(--back-2) 52%, transparent 52%), linear-gradient(-45deg, transparent 48%, var(--back-2) 48%, var(--back-2) 52%, transparent 52%), radial-gradient(transparent 40%, var(--back-2) 40%, var(--back-2) 48%, transparent 48%);
+  background-size: 10vw 10vw, 10vw 10vw, 10vw 10vw;
+  background-position: 0 0, 0 0, 0 0;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  overflow: scroll;
+  width: 100vw;
+  height: 100vh;
+}
+
+.flex > div {
+  overflow: scroll;
+  max-height: 97vh;
+  background-color: var(--back);
+  border-radius: 1.5vw;
+  padding: 2vw;
+  margin: 1vw;
+}
+
+.hide {
+  display: none
+}
+
+.loading {
+  font-size: 5vw;
+  animation: loading 5s infinite;
+}
+
+.theme-store,
+.image-store,
+.size-boxes {
+  width: 88vw;
+  margin: 1vw;
+  padding: 2vw;
+  border-radius: 2vw;
+}
+
+input[name="t"],
+input[name="i"] {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  width: 11vw;
+  height: 11vw;
+  margin: 0vw 3vw;
+  padding: 2px;
+  border-radius: 50%;
+  border: .5vw solid var(--back-2);
+  background-color: var(--bg);
+}
+
+input[name="t"]:checked,
+input[name="i"]:checked {
+  width: 11vw;
+  height: 11vw;
+  border: 1.5vw solid var(--color);
+}
+
+input[name="i"] {
+  border-radius: 2vw;
+  background-image: var(--bgi);
+  background-size: 11vw 11vw;
+}
+
+.choose-size {
+  font-size: 4vw;
+  width: 84vw;
+  padding: 3vw;
+  margin: 0vw 1vw;
+  border-radius: 1vw;
+  outline: none;
+  color: var(--color);
+  background-color: var(--back-2);
+  background-image: linear-gradient(90deg, var(--back-2) 60%, var(--color) 80%);
+}
+
+.start-game {
+  padding: 2vw 10vw;
+  margin: 0 26vw;
+  font-size: 6vw;
+  font-weight: 500;
+  color: var(--back);
+  background-color: var(--color);
+  border-radius: 3vw;
+  transition: all 1s;
+}
+
+.start-game:hover {
+  background-color: var(--back-2);
+  border: .8vw solid var(--color);
+  transition: all 1s;
+}
+
+.footer {
+  font-size: 2.5vw;
+  text-align: center;
+}
+
+a,
+a:hover,
+a:visited,
+a:active {
+  color: var(--color);
+}
+
+div.game-divs {
+  position: fixed;
+  top: calc(48vh - 48vmin);
+  left: calc(48vw - 48vmin);
+  padding: 1vmin;
+  margin: 1vmin;
+  display: grid;
+  grid-gap: 1vmin;
+  grid-template-columns: repeat(var(--size), 1fr);
+  overflow: hidden;
+  width: 96vmin;
+  height: 96vmin;
+  background-color: var(--back-2);
+}
+
+div.game-divs div {
+  padding: 0;
+  margin: 0;
+  border-radius: 1vmin;
+  background-color: red;
+  width: calc((96vmin - var(--size)) / var(--size));
+  height: calc((96vmin - var(--size)) / var(--size));
+  background-image: var(--image);
+  background-size: 96vmin 96vmin;
+  background-position: calc((96vmin / var(--size)) * var(--x)) calc((96vmin / var(--size)) * var(--y));
+}
+
+.game p {
+  background-color: red;
+  position: fixed;
+  color: var(--back);
+  border: .7vmax solid var(--back-2);
+  top: 0;
+  right: 0;
+  padding: 1.5vmax;
+  font-size: 3.5vmax;
+  border-radius: 0 0 0 4vmax;
+}
+
+div.result {
+  font-size: 6vmin;
+  padding: 6vmin;
+}
+
+.result div {
+  width: 50vmin;
+  height: 50vmin;
+  padding: 0;
+  margin: 0;
+  background-color: red;
+  background-image: var(--image);
+  background-size: 50vmin 50vmin;
+
+}
+
+.result span {
+  padding: 2vmin;
+  margin: 10vmin;
+  color: var(--back);
+  background-color: var(--color);
+  border-radius: 3vmin;
+}
+
+
+
+@keyframes loading {
+  0% {
+    color: white
+  }
+
+  20% {
+    color: #F238FF
+  }
+
+  40% {
+    color: #30BA00
+  }
+
+  60% {
+    color: blue
+  }
+
+  80% {
+    color: red
+  }
+
+  100% {
+    color: white
+  }
+}
